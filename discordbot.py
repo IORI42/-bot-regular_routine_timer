@@ -8,10 +8,10 @@ bot = commands.Bot(command_prefix='/')
 #指定した時間経過すると切断する
 @bot.command()
 async def for_time(ctx,min: int):
-    time = datetime.datetime.now()
-    await ctx.send(time)
-    time = time + datetime.timedelta(minutes=min)
-    await ctx.send(time)
+    now = datetime.datetime.now()
+    disconnect_time = now + datetime.timedelta(minutes=min)
+    await ctx.send(now)
+
 
 #毎日のアラームを設定する
 @bot.command()
