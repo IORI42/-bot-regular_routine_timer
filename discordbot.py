@@ -1,6 +1,7 @@
 from discord.ext import commands
 from os import getenv
 import traceback
+import datetime
 
 bot = commands.Bot(command_prefix='/')
 
@@ -16,8 +17,8 @@ async def on_command_error(ctx, error):
 #指定した時間経過すると切断する
 @bot.command()
 async def for_time(ctx,str):
-    test = type(str)
-    await ctx.send(test)
+    time = datetime.datetime.strptime(str, '%H%M')
+    await ctx.send(time)
 
 #毎日のアラームを設定する
 @bot.command()
