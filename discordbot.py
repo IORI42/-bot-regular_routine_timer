@@ -5,19 +5,10 @@ import datetime
 
 bot = commands.Bot(command_prefix='/')
 
-
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
-
-
-
 #指定した時間経過すると切断する
 @bot.command()
-async def for_time(ctx,str):
-    time = datetime.datetime.strptime(str, '%H%M')
+async def for_time(ctx,min):
+    time = datetime.timedelta(minutes=min)
     await ctx.send(time)
 
 #毎日のアラームを設定する
