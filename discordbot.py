@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix='/')
 async def for_time(ctx,min: int):
     now = datetime.datetime.now()
     disconnect_time = now + datetime.timedelta(minutes=min)
-    await ctx.send(now)
+    await ctx.send(datetime.datetime.now())
 
 
 #毎日のアラームを設定する
