@@ -9,6 +9,7 @@ bot = commands.Bot(command_prefix='/')
 @bot.command()
 async def for_time(ctx,min: int):
     time = datetime.datetime.now()
+    await ctx.send(time)
     time = time + datetime.timedelta(minutes=min)
     await ctx.send(time)
 
