@@ -15,8 +15,9 @@ async def on_command_error(ctx, error):
 
 #指定した時間経過すると切断する
 @bot.command()
-async def for_time(ctx):
-    await ctx.send('pong')
+async def for_time(ctx,str):
+    test = type(str)
+    await ctx.send(test)
 
 #毎日のアラームを設定する
 @bot.command()
